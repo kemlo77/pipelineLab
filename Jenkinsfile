@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Invoke other pipeline') {
             steps {
-                build job 'Gatling'
+                build 'Gatling'
                 echo 'Testing..'
             }
         }
