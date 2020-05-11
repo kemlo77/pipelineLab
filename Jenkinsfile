@@ -14,7 +14,8 @@ pipeline {
         }
         stage('Invoke other pipeline') {
             steps {
-                build 'gatlingParameterized', parameters: [string(name: 'targeturl', value:'kalle anka')]
+                // build 'gatlingParameterized', parameters: [string(name: 'targeturl', value:'kalle anka')]
+                build job: 'gatlingParameterized', parameters: [[$class: 'StringParameterValue', name: 'targeturl', value: 'hi hi hi' ]]
                 echo 'Testing..'
             }
         }
